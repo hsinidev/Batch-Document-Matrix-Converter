@@ -1,0 +1,100 @@
+{
+  "project_id": 4,
+  "title": "Batch Document Matrix Converter",
+  "folder_name": "004-Batch-Document-Matrix-Converter",
+  "category": "Document Processing & Publishing Core",
+  "target_os": "Windows 10 / Windows 11 (x64 Native Executable / PyInstaller .exe)",
+  "version": "1.0.0-PROD",
+  "overview": "A high-performance offline document transcoding suite and publishing utility engineered for technical writers, publishers, and enterprise teams. Seamlessly converts complex document formats across .txt, .docx, .epub, .html, .md, and .rtf using an embedded Pandoc v3.1+ engine, custom CSS style injectors, Dublin Core metadata batch editors, and BeautifulSoup4 DOM cleansers.",
+  "key_features": [
+    "Universal Document Transcoding Matrix: Bidirectional matrix transformation across TXT, DOCX, EPUB, HTML5, Markdown (GFM), and RTF with layout structure preservation",
+    "Embedded Pandoc v3.1+ 5-Tier Binary Resolver: Dynamic runtime binary detection and extraction supporting standalone execution without requiring prior system Pandoc installations",
+    "Custom CSS Typography & EPUB Style Injector: Real-time CSS theme injection for EPUB ebooks and HTML5 exports with custom font embedding, dark mode styles, and margin controls",
+    "Dublin Core Metadata Batch Editor: Interactive UI inspector to edit Title, Author, Publisher, Language, Cover Image, and Subject tags across batch conversion queues",
+    "BeautifulSoup4 HTML/EPUB DOM Sanitizer: Automatic cleanup of redundant inline tags, broken media paths, and malformed HTML structures prior to ebook compilation",
+    "Sequential Memory-Safe Pipeline: Non-blocking thread-safe task queue consuming batch documents sequentially to guarantee zero Pandoc memory leaks or OS file handle lockups"
+  ],
+  "core_stack": {
+    "python_version": "3.10+",
+    "gui_framework": "CustomTkinter >= 5.2.0",
+    "drag_and_drop": "TkinterDnD2 / tkinterdnd2-universal",
+    "concurrency": "threading.Thread, queue.Queue, subprocess.Popen",
+    "packaging": "PyInstaller 6.0+ (Standalone .exe)",
+    "transcoding_engine": "pypandoc >= 1.11 (Pandoc v3.1+ static binary wrapper)",
+    "docx_engine": "python-docx >= 0.8.11 (Native Word XML DOM inspection and header manipulation)",
+    "html_sanitizer": "beautifulsoup4 >= 4.12.0 & lxml >= 4.9.0 (High-speed DOM tree parsing)"
+  },
+  "design_system_and_theme": {
+    "theme_name": "Steel Indigo & Electric Violet",
+    "color_palette": {
+      "background_primary": "#0D0E15",
+      "background_secondary": "#151722",
+      "surface_card": "#1A1C26",
+      "accent_primary": "#8B5CF6",
+      "accent_secondary": "#06B6D4",
+      "accent_hover": "#7C3AED",
+      "text_primary": "#F3F4F6",
+      "text_secondary": "#9CA3AF",
+      "danger_red": "#EF4444",
+      "warning_amber": "#F59E0B",
+      "success_emerald": "#10B981",
+      "border_color": "#292D3E"
+    },
+    "typography": {
+      "font_family": "Segoe UI, Inter, Cascadia Code, sans-serif",
+      "heading_size": 18,
+      "subheading_size": 14,
+      "body_size": 12,
+      "caption_size": 10
+    }
+  },
+  "system_architecture": {
+    "pattern": "Model-View-Controller (MVC) with Asynchronous Thread-Safe Event Queue",
+    "main_ui_thread": "CustomTkinter 60 FPS event loop displaying batch dropzone, metadata editor, CSS injection controls, and polling queue events at 20 Hz (50ms interval)",
+    "worker_threads": "Background Python threads executing non-blocking stream & engine tasks",
+    "inter_thread_communication": "Thread-safe queue.Queue delivering atomic telemetry payloads: ('STATUS', doc_id, state), ('PROGRESS', percent, filename), ('LOG', msg), ('COMPLETE', output_path), ('ERROR', err_str)",
+    "process_safety": "Thread-safe event queue passing, clean process tree termination, and memory safety",
+    "ui_thread": "CustomTkinter main loop polling queue.Queue every 40ms for 60 FPS UI responsiveness"
+  },
+  "conversion_pipeline_optimization": {
+    "pandoc_binary_resolution": "5-Tier resolution order: 1) sys._MEIPASS, 2) Script directory, 3) Local ./bin/pandoc/ subfolder, 4) System PATH (shutil.which), 5) User manual browser",
+    "css_injection_engine": "Inject custom typography stylesheets directly into EPUB container archives and standalone HTML output headers",
+    "metadata_injection": "Build Dublin Core YAML/JSON frontmatter blocks and inject into Pandoc arguments (--metadata title=..., --metadata author=...)",
+    "dom_sanitization": "Pre-parse HTML/Markdown AST trees using BeautifulSoup4 to resolve relative image paths and sanitize nested tags"
+  },
+  "binary_resolution_order": [
+    "sys._MEIPASS (PyInstaller frozen runtime root)",
+    "Application root directory / 'bin/pandoc' subfolder",
+    "Local AppData / Program Files Pandoc default paths (C:\\Program Files\\Pandoc\\pandoc.exe)",
+    "System environment PATH (shutil.which)",
+    "User interactive manual binary file selection dialog"
+  ],
+  "packaging_spec": {
+    "entry_point": "main.py",
+    "output_binary_name": "BatchDocumentMatrixConverter.exe",
+    "bundle_mode": "onedir / standalone exe",
+    "icon_asset": "assets/icon.ico",
+    "datas": [
+      [
+        "assets/",
+        "assets"
+      ],
+      [
+        "bin/pandoc/",
+        "bin/pandoc"
+      ],
+      [
+        "styles/",
+        "styles"
+      ]
+    ],
+    "hidden_imports": [
+      "customtkinter",
+      "tkinterdnd2",
+      "PIL",
+      "queue",
+      "concurrent.futures"
+    ]
+  },
+  "ai_agent_prompt": "You are an elite Senior Desktop Systems & Document Engineering Specialist tasked with implementing a production-grade native Windows desktop application titled 'Batch Document Matrix Converter'.\n\n### PROJECT OBJECTIVE:\nConstruct a zero-cloud, highly stable multi-format document conversion application that transforms files seamlessly between .txt, .docx, .epub, .html, .md, and .rtf with custom CSS typography injection, Dublin Core metadata editing, BeautifulSoup4 DOM tree cleanup, and sequential memory-safe background task processing.\n\n### MANDATORY TECHNICAL REQUIREMENTS:\n1. DISTINCT UI & THEME (STEEL INDIGO & ELECTRIC VIOLET):\n   - Implement a dark workspace using #0D0E15 (Primary Background), #151722 (Panels), #1A1C26 (Cards), #8B5CF6 (Electric Violet Primary Accent), and #06B6D4 (Cyan Secondary Accent).\n   - Provide a responsive dual-pane layout featuring a drag-and-drop file matrix queue, Dublin Core metadata editor, CSS style injector panel, and collapsible execution log.\n\n2. MULTI-FORMAT DOCUMENT TRANSCODING MATRIX:\n   - Support bidirectional document conversions between TXT, DOCX, EPUB, HTML5, Markdown (GFM), and RTF.\n   - Leverage pypandoc wrapping Pandoc v3.1+ with custom parameter flags (--toc, --standalone, --css, --metadata).\n\n3. DUBLIN CORE METADATA & CSS STYLING INJECTOR:\n   - Build an interactive editor for document metadata (Title, Author, Language, Publisher, Cover Image).\n   - Provide a CSS stylesheet manager allowing users to select or edit custom CSS for EPUB/HTML output styling.\n\n4. SEQUENTIAL MEMORY-SAFE CONCURRENCY:\n   - Execute batch conversions sequentially inside a background threading.Thread worker consuming a thread-safe queue.Queue to prevent Pandoc binary memory leaks or Windows file locking conflicts.\n   - Stream telemetry events and progress metrics to the main GUI thread every 50ms.\n\n5. RESILIENCE, BINARY RESOLUTION & PACKAGING:\n   - Implement a 5-tier binary resolver for pandoc.exe.\n   - Ensure clean job cancellation and temp file cleanup.\n   - Deliver a complete BatchDocumentMatrixConverter.spec for PyInstaller single-file packaging."
+}

@@ -4,7 +4,7 @@
 [![Developer](https://img.shields.io/badge/Developer-Hsini%20Mohamed-green.svg)](https://hsini.dev)
 
 > **Project ID**: `004`  
-> **Repository**: [https://github.com/hsinidev/004-Batch-Document-Matrix-Converter](https://github.com/hsinidev/004-Batch-Document-Matrix-Converter)
+> **Repository**: [https://github.com/hsinidev/Batch-Document-Matrix-Converter](https://github.com/hsinidev/Batch-Document-Matrix-Converter)
 
 ---
 
@@ -38,10 +38,10 @@ Batch Document Matrix Converter provides automated cross-format batch conversion
 ### Setup Instructions
 ```bash
 # 1. Clone the repository
-git clone https://github.com/hsinidev/004-Batch-Document-Matrix-Converter.git
+git clone https://github.com/hsinidev/Batch-Document-Matrix-Converter.git
 
 # 2. Navigate to project directory
-cd 004-Batch-Document-Matrix-Converter
+cd Batch-Document-Matrix-Converter
 
 # 3. Install required dependencies
 pip install -r requirements.txt
@@ -59,7 +59,7 @@ python app.py
 - **Website**: [https://hsini.dev](https://hsini.dev)
 - **Email**: [contact@hsini.dev](mailto:contact@hsini.dev)
 - **GitHub Profile**: [https://github.com/hsinidev](https://github.com/hsinidev)
-- **Project Repo**: [https://github.com/hsinidev/004-Batch-Document-Matrix-Converter](https://github.com/hsinidev/004-Batch-Document-Matrix-Converter)
+- **Project Repo**: [https://github.com/hsinidev/Batch-Document-Matrix-Converter](https://github.com/hsinidev/Batch-Document-Matrix-Converter)
 
 ---
 
